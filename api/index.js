@@ -1,10 +1,11 @@
 import express from "express";
+import RegisterRouter from "./routes/auth.routes.js";
 const port = 3000;
 const app = express();
 
-app.use('/',(req, res)=>{
-    res.send("Hello world");
-});
+// MiddleWares
+app.use('/auth', RegisterRouter);
+
 
 
 // make the server start and listen on the port.
