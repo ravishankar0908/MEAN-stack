@@ -1,13 +1,16 @@
 import express from "express";
-import { AuthRegister, UserRegistration } from "../controllers/auth.controller.js";
+import { Allusers, userById, UserRegistration } from "../controllers/auth.controller.js";
 
 
 const router = express.Router();
 
 // Get the values from the register
-router.get('/register', AuthRegister);
+router.get('/users', Allusers);
 
 // Insert the user into registration
 router.post('/register', UserRegistration);
+
+// getting the user by id
+router.get('/users/:id', userById);
 
 export default router;
