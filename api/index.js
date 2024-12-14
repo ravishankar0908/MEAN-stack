@@ -7,9 +7,9 @@ const app = express();
 
 // MiddleWares
 dotenv.config();
+app.use(express.json());
+
 app.use('/auth', RegisterRouter);
-
-
 
 // connecting the server with the database
 const connection = async()=>{
