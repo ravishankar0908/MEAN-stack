@@ -1,5 +1,5 @@
 import express from "express";
-import { Allusers, userById, UserRegistration } from "../controllers/auth.controller.js";
+import { Allusers, DeleteUser, userById, UserRegistration } from "../controllers/auth.controller.js";
 
 
 const router = express.Router();
@@ -12,5 +12,8 @@ router.post('/register', UserRegistration);
 
 // getting the user by id
 router.get('/users/:id', userById);
+
+// Delete the user by id
+router.delete('/users/:id', DeleteUser);
 
 export default router;
